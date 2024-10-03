@@ -10,7 +10,7 @@ z = np.array([[1], [2], [-1]])
 
 np.save("A4.npy", A + B)
 print(A + B)
-np.save("A5.npy", 3*x - 4*y)
+np.save("A5.npy", 3 * x - 4 * y)
 print(3*x - 4*y)
 np.save("A6.npy", A.dot(x))
 print(A.dot(x))
