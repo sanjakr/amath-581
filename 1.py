@@ -21,9 +21,9 @@ while True:
     cur_x = x_vals[i]
     i += 1
     f_c = f_x(cur_x)
+    x_vals.append(cur_x - (f_x(cur_x) / fd_x(cur_x)))
     if np.abs(f_c) <= 10**(-6):
         break
-    x_vals.append(cur_x - (f_x(cur_x)/fd_x(cur_x)))
 
 print("Newton-Raphson method:")
 print(f"Number of iterations: {i}")
@@ -59,7 +59,7 @@ print(f"Solution: {x_c_list[-1]}")
 print(x_c_list[-1])
 A2 = np.array(x_c_list)
 np.save("A2.npy", A2)
-A3 = np.array([iters])
+A3 = np.array(iters)
 np.save("A3.npy", A3)
 
 
@@ -67,9 +67,9 @@ A = np.array([[1, 2], [-1, 1]])
 B = np.array([[2, 0], [0, 2]])
 C = np.array([[2, 0, -3], [0, 0, -1]])
 D = np.array([[1, 2], [2, 3], [-1, 0]])
-x = np.array([[1], [0]])
-y = np.array([[0], [1]])
-z = np.array([[1], [2], [-1]])
+x = np.array([1, 0])
+y = np.array([0, 1])
+z = np.array([1, 2, -1])
 
 A4 = A + B
 np.save("A4.npy", A4)
