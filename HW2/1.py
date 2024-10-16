@@ -15,14 +15,14 @@ A = -1
 x0 = [0, A]
 L = 4
 xp = [-L, L]
-xshoot = np.linspace(xp[0], xp[1], 100)
+xshoot = np.linspace(xp[0], xp[1], L*2*10)
 ys = []
 evs = []
 
 beta_start = n0  # beginning value of beta
 for modes in range(1, 6):  # begin mode loop
     beta = beta_start  # initial value of eigenvalue beta
-    dbeta = n0 / 100  # default step size in beta
+    dbeta = n0 / 10  # default step size in beta
     for i in range(1000):  # begin convergence loop for beta
         y_sol = odeint(shoot2, x0, xshoot, args=(beta,))
         # y = RK45(shoot2, xp[0], x0, xp[1], args=(n0,beta))
