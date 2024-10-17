@@ -15,7 +15,7 @@ A = -1
 x0 = [0, A]
 L = 4
 xp = [-L, L]
-xshoot = np.linspace(xp[0], xp[1], L*2*10)
+xshoot = np.linspace(xp[0], xp[1], 81)
 ys = []
 evs = []
 
@@ -43,11 +43,11 @@ for modes in range(1, 6):  # begin mode loop
     norm = np.trapezoid(y_sol[:, 0] * y_sol[:, 0], xshoot)  # calculate the normalization
     y_norm = np.abs(y_sol[:, 0] / np.sqrt(norm))
     ys.append(y_norm)
-    plt.plot(xshoot, y_norm, col[modes - 1])  # plot modes
+#     plt.plot(xshoot, y_norm, col[modes - 1])  # plot modes
+#
+# plt.show()  # end mode loop
 
-plt.show()  # end mode loop
-
-A1 = np.vstack(ys)
-A2 = np.transpose(np.vstack(evs))
+A1 = np.transpose(np.array(ys))
+A2 = np.array(evs)
 print(A1.shape)
 print(A2.shape)
